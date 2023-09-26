@@ -9,9 +9,9 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 $<lowerSnakeCase>_shared_content = genesis_get_config( 'onboarding-shared' );
-
+<n>
 return [
 	'starter_packs' => [
 		'black-white' => [

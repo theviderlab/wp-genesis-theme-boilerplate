@@ -12,13 +12,13 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 // Requires helper WPForms function to create a new form.
 require_once get_stylesheet_directory() . '/lib/wpforms.php';
-
+<n>
 // Swaps the default content below with a WPForms contact form block if the WPForms plugin is active.
 add_action( 'genesis_onboarding_after_import_content', 'studiopress_insert_contact_form', 10, 2 );
-
+<n>
 return <<<CONTENT
 <!-- wp:paragraph -->
 <p>Add a contact form to this page with the WPForms Lite plugin (Third Party). Learn <a href="https://my.studiopress.com/documentation/wpforms/plugin-usage/create-contact-forms-with-wpforms/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">how to create a form using WPForms</a>.</p>

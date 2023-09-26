@@ -12,7 +12,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 return [
 	'plugins'          => [
 		[

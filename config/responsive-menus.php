@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 /**
  * Genesis responsive menus settings. (Requires Genesis 3.0+.)
  */

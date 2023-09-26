@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 return [
 	GENESIS_SETTINGS_FIELD => [
 		'blog_cat_num'              => 6,

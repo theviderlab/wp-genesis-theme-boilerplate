@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 add_filter( 'simple_social_default_styles', '<lowerSnakeCase>_social_default_styles' );
 /**
  * Set Simple Social Icon defaults.
@@ -20,9 +20,9 @@ add_filter( 'simple_social_default_styles', '<lowerSnakeCase>_social_default_sty
  * @return array Modified social style defaults.
  */
 function <lowerSnakeCase>_social_default_styles( $defaults ) {
-
+<n>
 	$args = genesis_get_config( 'simple-social-icons-settings' );
-
+<n>
 	return wp_parse_args( $args, $defaults );
-
+<n>
 }

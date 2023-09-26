@@ -7,25 +7,25 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 $<lowerSnakeCase>_default_colors = [
 	'link'   => '#0073e5',
 	'accent' => '#0073e5',
 ];
-
+<n>
 $<lowerSnakeCase>_link_color = get_theme_mod(
 	'<lowerSnakeCase>_link_color',
 	$<lowerSnakeCase>_default_colors['link']
 );
-
+<n>
 $<lowerSnakeCase>_accent_color = get_theme_mod(
 	'<lowerSnakeCase>_accent_color',
 	$<lowerSnakeCase>_default_colors['accent']
 );
-
+<n>
 $<lowerSnakeCase>_link_color_contrast   = <lowerSnakeCase>_color_contrast( $<lowerSnakeCase>_link_color );
 $<lowerSnakeCase>_link_color_brightness = <lowerSnakeCase>_color_brightness( $<lowerSnakeCase>_link_color, 35 );
-
+<n>
 return [
 	'fonts-url'            => 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700&display=swap',
 	'content-width'        => 1062,

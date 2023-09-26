@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 add_action( 'customize_register', '<lowerSnakeCase>_customizer_register' );
 /**
  * Registers settings and controls with the Customizer.
@@ -19,9 +19,9 @@ add_action( 'customize_register', '<lowerSnakeCase>_customizer_register' );
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 function <lowerSnakeCase>_customizer_register( $wp_customize ) {
-
+<n>
 	$appearance = genesis_get_config( 'appearance' );
-
+<n>
 	$wp_customize->add_setting(
 		'<lowerSnakeCase>_link_color',
 		[
@@ -29,7 +29,7 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
-
+<n>
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
@@ -42,7 +42,7 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 			]
 		)
 	);
-
+<n>
 	$wp_customize->add_setting(
 		'<lowerSnakeCase>_accent_color',
 		[
@@ -50,7 +50,7 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
-
+<n>
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
@@ -63,7 +63,7 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 			]
 		)
 	);
-
+<n>
 	$wp_customize->add_setting(
 		'<lowerSnakeCase>_logo_width',
 		[
@@ -72,7 +72,7 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 			'validate_callback' => '<lowerSnakeCase>_validate_logo_width',
 		]
 	);
-
+<n>
 	// Add a control for the logo size.
 	$wp_customize->add_control(
 		'<lowerSnakeCase>_logo_width',
@@ -89,9 +89,9 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
 
 		]
 	);
-
+<n>
 }
-
+<n>
 /**
  * Displays a message if the entered width is not numeric or greater than 100.
  *
@@ -100,13 +100,13 @@ function <lowerSnakeCase>_customizer_register( $wp_customize ) {
  * @return int The new width.
  */
 function <lowerSnakeCase>_validate_logo_width( $validity, $width ) {
-
-	if ( empty( $width ) || ! is_numeric( $width ) ) {
+<n>
+	if ( empty( $width ) || is_numeric( $width ) === false ) {
 		$validity->add( 'required', __( 'You must supply a valid number.', '<kebabCase>' ) );
 	} elseif ( $width < 100 ) {
 		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', '<kebabCase>' ) );
 	}
-
+<n>
 	return $validity;
-
+<n>
 }

@@ -7,7 +7,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 return [
 	'alignment'              => 'alignleft',
 	'background_color'       => '#f5f5f5',

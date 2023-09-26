@@ -9,7 +9,7 @@
  * @license GPL-2.0-or-later
  * @link    <themeAuthorURI>
  */
-
+<n>
 add_action( 'wp_enqueue_scripts', '<lowerSnakeCase>_css' );
 /**
  * Checks the settings for the link color, and accent color.
@@ -18,13 +18,13 @@ add_action( 'wp_enqueue_scripts', '<lowerSnakeCase>_css' );
  * @since 2.2.3
  */
 function <lowerSnakeCase>_css() {
-
+<n>
 	$appearance = genesis_get_config( 'appearance' );
-
+<n>
 	$color_link   = get_theme_mod( '<lowerSnakeCase>_link_color', $appearance['default-colors']['link'] );
 	$color_accent = get_theme_mod( '<lowerSnakeCase>_accent_color', $appearance['default-colors']['accent'] );
 	$logo         = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-
+<n>
 	if ( $logo ) {
 		$logo_height           = absint( $logo[2] );
 		$logo_max_width        = get_theme_mod( '<lowerSnakeCase>_logo_width', 350 );
@@ -33,12 +33,12 @@ function <lowerSnakeCase>_css() {
 		$logo_effective_height = min( $logo_width, $logo_max_width ) / max( $logo_ratio, 1 );
 		$logo_padding          = max( 0, ( 60 - $logo_effective_height ) / 2 );
 	}
-
+<n>
 	$css = '';
-
-	$css .= ( $appearance['default-colors']['link'] !== $color_link ) ? sprintf(
+<n>
+	$css .= ( $appearance['default-colors']['link'] === $color_link ) === false ? sprintf(
 		'
-
+<n>
 		a,
 		.entry-title a:focus,
 		.entry-title a:hover,
@@ -53,14 +53,14 @@ function <lowerSnakeCase>_css() {
 		.sub-menu-toggle:hover {
 			color: %s;
 		}
-
+<n>
 		',
 		$color_link
 	) : '';
 
-	$css .= ( $appearance['default-colors']['accent'] !== $color_accent ) ? sprintf(
+	$css .= ( $appearance['default-colors']['accent'] === $color_accent ) === false ? sprintf(
 		'
-
+<n>
 		button:focus,
 		button:hover,
 		input[type="button"]:focus,
@@ -82,7 +82,7 @@ function <lowerSnakeCase>_css() {
 			background-color: %1$s;
 			color: %2$s;
 		}
-
+<n>
 		@media only screen and (min-width: 960px) {
 			.genesis-nav-menu > .menu-highlight > a:hover,
 			.genesis-nav-menu > .menu-highlight > a:focus,
@@ -95,7 +95,7 @@ function <lowerSnakeCase>_css() {
 		$color_accent,
 		<lowerSnakeCase>_color_contrast( $color_accent )
 	) : '';
-
+<n>
 	$css .= ( has_custom_logo() && ( 200 <= $logo_effective_height ) ) ?
 		'
 		.site-header {
@@ -103,8 +103,8 @@ function <lowerSnakeCase>_css() {
 		}
 		'
 	: '';
-
-	$css .= ( has_custom_logo() && ( 350 !== $logo_max_width ) ) ? sprintf(
+<n>
+	$css .= ( has_custom_logo() && (( 350 === $logo_max_width ) === false) ) ? sprintf(
 		'
 		.wp-custom-logo .site-container .title-area {
 			max-width: %spx;
@@ -112,7 +112,7 @@ function <lowerSnakeCase>_css() {
 		',
 		$logo_max_width
 	) : '';
-
+<n>
 	// Place menu below logo and center logo once it gets big.
 	$css .= ( has_custom_logo() && ( 600 <= $logo_max_width ) ) ?
 		'
@@ -121,24 +121,24 @@ function <lowerSnakeCase>_css() {
 		.wp-custom-logo .nav-primary {
 			float: none;
 		}
-
+<n>
 		.wp-custom-logo .title-area {
 			margin: 0 auto;
 			text-align: center;
 		}
-
+<n>
 		@media only screen and (min-width: 960px) {
 			.wp-custom-logo .nav-primary {
 				text-align: center;
 			}
-
+<n>
 			.wp-custom-logo .nav-primary .sub-menu {
 				text-align: left;
 			}
 		}
 		'
 	: '';
-
+<n>
 	$css .= ( has_custom_logo() && $logo_padding && ( 1 < $logo_effective_height ) ) ? sprintf(
 		'
 		.wp-custom-logo .title-area {
@@ -147,9 +147,9 @@ function <lowerSnakeCase>_css() {
 		',
 		$logo_padding + 5
 	) : '';
-
+<n>
 	if ( $css ) {
 		wp_add_inline_style( genesis_get_theme_handle(), $css );
 	}
-
+<n>
 }
